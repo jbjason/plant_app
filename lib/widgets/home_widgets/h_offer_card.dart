@@ -22,10 +22,13 @@ class HOfferCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // category type top
                   Image.asset(categories[0].type, color: bonsaiTypeColor),
                   const SizedBox(height: 15),
+                  // category type bottom
                   Image.asset(item.type, color: bonsaiTypeColor),
                   const Spacer(),
+                  // title
                   Text(
                     item.title,
                     style: const TextStyle(
@@ -36,11 +39,13 @@ class HOfferCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  // subtitle
                   Text(
                     item.subTitle,
                     style: const TextStyle(color: textSecondary, fontSize: 10),
                   ),
                   const Spacer(),
+                  // price & offer-percent
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -66,6 +71,7 @@ class HOfferCard extends StatelessWidget {
                 ],
               ),
             ),
+            // img
             Positioned(
               left: 0,
               right: -100,

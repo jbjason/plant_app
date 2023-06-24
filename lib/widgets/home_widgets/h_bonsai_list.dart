@@ -25,9 +25,9 @@ class HBonsaiList extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 Positioned(
-                  bottom: 9,
+                  bottom: 5,
                   left: 0,
-                  right: 9,
+                  right: 5,
                   height: size.height * .14,
                   child: Container(
                     padding:
