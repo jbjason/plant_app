@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants/constants.dart';
+import 'package:plant_app/constants/constants_get.dart';
 import 'package:plant_app/screens/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 30, left: 30),
@@ -129,13 +131,7 @@ class WelcomePainter extends CustomPainter {
     final h = size.height, w = size.width;
     final rect =
         Rect.fromCenter(center: Offset(w / 2, h / 2), width: w, height: h);
-    const gradient = LinearGradient(
-      tileMode: TileMode.repeated,
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [backPrimary, backSecondary, backSecondary, backSecondary],
-    );
-    final paint = Paint()..shader = gradient.createShader(rect);
+    final paint = Paint()..shader = greenGradient.createShader(rect);
 
     final path = Path();
     path.moveTo(w, 0);
