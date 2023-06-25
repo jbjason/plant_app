@@ -13,6 +13,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // appbar
           Positioned(
             top: MediaQuery.of(context).padding.top,
             child: AppBar(
@@ -30,6 +31,7 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
           ),
+
           Positioned(
             top: size.height * .3,
             bottom: 0,
@@ -46,7 +48,17 @@ class DetailsScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _getBonsaiType('Sunshine', '18.24 C', Colors.amber),
+                      _getBonsaiType('Sunshine', '18.24 C', Colors.amber),
+                      _getBonsaiType('Sunshine', '18.24 C', Colors.amber),
+                      const SizedBox(height: 30),
+                    ],
+                  ),
+
+                  // buy-now button
                   ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
@@ -71,6 +83,7 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
           ),
+          // img
           Positioned(
             top: 0,
             left: -100,
@@ -82,4 +95,25 @@ class DetailsScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _getBonsaiType(String title, String details, Color color) => Container(
+        height: 100,
+        width: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(13),
+          gradient: bodyGradient,
+          boxShadow: boxShadow,
+        ),
+        child: Column(
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                color: backPrimary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      );
 }
