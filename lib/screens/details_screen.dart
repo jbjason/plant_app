@@ -13,7 +13,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // 3 img-types container
+          // title,price, counter ,details, img-type containers
           Positioned(
             top: size.height * .3,
             bottom: 0,
