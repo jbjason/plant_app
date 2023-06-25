@@ -1,6 +1,9 @@
 class Bonsai {
   final String title;
-  final String subTitle;
+  final String lifeTime;
+  final String details;
+  final double ratings;
+  final int reviews;
   final String img;
   final String type;
   final double price;
@@ -8,7 +11,10 @@ class Bonsai {
 
   const Bonsai({
     required this.title,
-    required this.subTitle,
+    required this.lifeTime,
+    required this.details,
+    required this.ratings,
+    required this.reviews,
     required this.img,
     required this.type,
     required this.price,

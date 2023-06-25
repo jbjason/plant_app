@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/constants/constants.dart';
 import 'package:plant_app/constants/constants_get.dart';
 
 class HNavPainter extends CustomPainter {
@@ -28,8 +29,8 @@ class HOfferCardPainter extends CustomPainter {
     // right side percent text card
     final path2 = Path();
     final paint2 = Paint()..color = Colors.amberAccent;
-    path2.moveTo(w * .3, h * .75);
-    path2.lineTo(w + 20, h * .75);
+    path2.moveTo(w * .37, h * .9);
+    path2.lineTo(w + 20, h * .7);
     path2.lineTo(w + 20, h);
     path2.lineTo(w * .3, h);
     path2.close();
@@ -49,6 +50,7 @@ class HOfferCardPainter extends CustomPainter {
     path.lineTo(0, h * .1);
     path.quadraticBezierTo(0, 0, w * .1, 0);
     path.close();
+    canvas.drawShadow(path, backPrimary, 10, false);
     canvas.drawPath(path, paint);
   }
 

@@ -70,28 +70,20 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // bottom left img
-                Positioned(
-                  bottom: -size.height * .02,
-                  left: -size.height * .085,
-                  width: size.width * .6,
-                  height: size.height * .1,
-                  child: Image.asset(welcomeImg2),
-                ),
                 // bottom middle img
                 Positioned(
-                  bottom: -size.height * .1,
-                  right: size.width * .13,
-                  width: size.width * .7,
-                  height: size.height * .3,
+                  bottom: -size.height * .04,
+                  right: 30,
+                  width: size.width * .5,
+                  height: size.height * .17,
                   child: Image.asset(welcomeImg4, fit: BoxFit.fill),
                 ),
                 // bottom right img
                 Positioned(
-                  bottom: -size.height * .02,
-                  right: 0,
-                  width: size.width * .35,
-                  height: size.height * .12,
+                  bottom: -10,
+                  right: -10,
+                  width: size.width * .25,
+                  height: size.height * .07,
                   child: Image.asset(welcomeImg3),
                 ),
 
