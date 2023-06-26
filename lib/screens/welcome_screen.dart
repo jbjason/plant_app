@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants/constants.dart';
-import 'package:plant_app/constants/constants_get.dart';
-import 'package:plant_app/screens/home_screen.dart';
+import 'package:plant_app/widgets/welcome_widgets/wel_body_texts.dart';
+import 'package:plant_app/widgets/welcome_widgets/wel_painter.dart';
+import 'package:plant_app/widgets/welcome_widgets/wel_start_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -15,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(top: 30, left: 30),
           child: CustomPaint(
-            painter: WelcomePainter(),
+            painter: WelPainter(),
             child: Stack(
               clipBehavior: Clip.none,
               fit: StackFit.expand,
@@ -29,45 +30,22 @@ class WelcomeScreen extends StatelessWidget {
                   child: Image.asset(welcomeImg, fit: BoxFit.contain),
                 ),
                 // welcome text
-                Positioned(
-                  left: 40,
-                  right: 0,
-                  bottom: size.height * .3,
-                  height: size.height * .25,
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      // title
-                      Text(
-                        welcomeTitle,
-                        style: TextStyle(
-                          fontSize: 40,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1.2,
-                          fontFamily: font1,
-                        ),
+                WelBodyTexts(size: size),
+                const Positioned(
+                  bottom: 0,
+                  right: -25,
+                  child: RotatedBox(
+                    quarterTurns: 3,
+                    child: Text(
+                      'BONSAI PLANTERS',
+                      style: TextStyle(
+                        fontSize: 76,
+                        letterSpacing: 1.5,
+                        wordSpacing: 10,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white10,
                       ),
-                      // subtitle 1
-                      Text(
-                        welcomeSubTitle1,
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.white70,
-                          fontFamily: font3,
-                        ),
-                      ),
-                      // subtitle 2
-                      Text(
-                        welcomeSubTitle2,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontFamily: font3,
-                          color: Colors.white70,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 // bottom middle img
@@ -86,28 +64,8 @@ class WelcomeScreen extends StatelessWidget {
                   height: size.height * .07,
                   child: Image.asset(welcomeImg3),
                 ),
-
                 // get started button
-                Positioned(
-                  top: size.height * .69,
-                  left: size.width * .2,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const HomeScreen()),
-                      );
-                    },
-                    child: const Text(
-                      'Get Started →',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: backPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+                WelStartButton(size: size),
               ],
             ),
           ),
@@ -115,33 +73,4 @@ class WelcomeScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class WelcomePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final h = size.height, w = size.width;
-    final rect =
-        Rect.fromCenter(center: Offset(w / 2, h / 2), width: w, height: h);
-    final paint = Paint()..shader = greenGradient.createShader(rect);
-
-    final path = Path();
-    path.moveTo(w, 0);
-    path.lineTo(w, h);
-    path.lineTo(w * .3, h);
-    path.lineTo(w * .3, h * .85);
-    path.cubicTo(w * .3, h * .8, w * .4, h * .8, w * .6, h * .8);
-    path.lineTo(w * .65, h * .8);
-    path.cubicTo(w * .8, h * .8, w * .8, h * .725, w * .65, h * .725);
-    path.lineTo(w * .1, h * .725);
-    path.quadraticBezierTo(0, h * .725, 0, h * .65);
-    path.lineTo(0, h * .1);
-    path.quadraticBezierTo(0, 0, w * .2, 0);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

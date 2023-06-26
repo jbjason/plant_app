@@ -97,7 +97,7 @@ class HBonsaiList extends StatelessWidget {
                             topLeft: Radius.circular(20),
                             bottomRight: Radius.circular(13),
                           ),
-                          color: backPrimary,
+                          color: backSecondary,
                         ),
                         child: const Icon(
                           Icons.shopping_bag_outlined,

@@ -13,12 +13,11 @@ class HNavBar extends StatelessWidget {
       child: CustomPaint(
         painter: HNavPainter(),
         child: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(Icons.home_outlined, color: iconSecondary),
-            Icon(CupertinoIcons.camera, color: iconBack2),
-            Icon(Icons.settings_outlined, color: iconBack2),
-            Icon(CupertinoIcons.person, color: iconBack2),
+            Expanded(child: Icon(Icons.home_outlined, color: iconSecondary)),
+            Expanded(child: Icon(CupertinoIcons.camera, color: iconBack2)),
+            Expanded(child: Icon(Icons.settings_outlined, color: iconBack2)),
+            Expanded(child: Icon(CupertinoIcons.person, color: iconBack2)),
           ],
         ),
       ),

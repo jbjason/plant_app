@@ -7,6 +7,9 @@ class HNavPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final h = size.height, w = size.width;
     final paint = Paint()..color = const Color.fromARGB(255, 7, 43, 9);
+    final paint2 = Paint()
+      ..color = Colors.white60
+      ..strokeWidth = 1;
     final path = Path();
     path.moveTo(0, h);
     path.lineTo(0, h * .55);
@@ -15,6 +18,12 @@ class HNavPainter extends CustomPainter {
     path.lineTo(w, h);
     path.close();
     canvas.drawPath(path, paint);
+
+    final halfWay = (w / 4) / 2;
+    final lineStart = Offset(halfWay - 24, h - 15);
+    final lineEnd = Offset(halfWay + 24, h - 15);
+    canvas.drawLine(lineStart, lineEnd, paint2);
+    canvas.drawCircle(Offset(halfWay, h - 8), 3, paint2);
   }
 
   @override

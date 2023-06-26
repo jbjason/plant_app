@@ -15,11 +15,7 @@ class HAppBar extends StatelessWidget {
               height: 30, width: 40, color: backPrimary),
           const Text(
             'Bonsai World',
-            style: TextStyle(
-              fontSize: 20,
-              color: backPrimary,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 20, color: backPrimary),
           ),
           Image.asset('assets/icons/cart2.png', color: backPrimary),
         ],

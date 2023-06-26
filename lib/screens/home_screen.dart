@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               HOfferCard(size: size),
               // varient text
               const Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(15.0),
                 child: Text(
                   'Varients',
                   style: TextStyle(

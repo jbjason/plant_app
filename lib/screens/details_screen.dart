@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/constants/constants.dart';
 import 'package:plant_app/models/bonsai.dart';
 import 'package:plant_app/widgets/details_widgets/d_appbar.dart';
 import 'package:plant_app/widgets/details_widgets/d_body.dart';
@@ -28,6 +29,18 @@ class DetailsScreen extends StatelessWidget {
             right: 0,
             height: size.height * .4,
             child: Image.asset(item.img, fit: BoxFit.fitHeight),
+          ),
+          // love icon
+          Positioned(
+            top: (size.height * .3) - 20,
+            right: 20,
+            child: const CircleAvatar(
+              radius: 20,
+              backgroundColor: backPrimary,
+              child: FittedBox(
+                child: Icon(Icons.favorite, color: backSecondary),
+              ),
+            ),
           ),
           // appbar
           const DAppBar(),
